@@ -9,5 +9,9 @@ urlpatterns = [
     path('work_add_status', views.work_add_status),
     path('work_edit/<int:id>', views.work_edit),
     path('work_update/<int:id>', views.work_update),
-    path('work_delete/<int:id>', views.work_delete)
+    path('work_delete/<int:id>', views.work_delete),
+    path('superlogin_index/updated', views.updated),
+    path('superlogin_index/work_delete/<int:id>', views.work_delete),
+    path('superlogin_index/work_update/<int:id>', views.work_update),
+    path('superlogin_index/work_add/<int:id>', views.work_add),
 ]

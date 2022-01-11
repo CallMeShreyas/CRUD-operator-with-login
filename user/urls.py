@@ -8,5 +8,7 @@ urlpatterns = [
     path('signup_index', views.signup_index),
     path('login_index', views.login_index),
     path('work_add', views.work_add),
-    path('work_add_status', views.work_add_status)
+    path('work_add_status', views.work_add_status),
+    path('login_index/updated', views.updated),
+    path('login_index/work_add/<int:id>', views.work_add)
 ]

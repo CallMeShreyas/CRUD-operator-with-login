@@ -6,7 +6,7 @@ from superuser.models import Employee
 
 
 def login(request):
-    return render(request, 'login.html')
+    return render(request, 'userlogin.html')
 
 
 def signup(request):
@@ -38,13 +38,13 @@ def login_index(request):
 
     if(user.password == upassword):
         employee = Employee.objects.all()
-        return render(request, 'show.html', {'employee': employee})
+        return render(request, 'show_user.html', {'employee': employee})
     else:
-        return HttpResponse('<h1>Invalid Credentials</h1><br><a href="/user/login"> Retry To Login</a>')
+        return HttpResponse('<h1>Invalid Credentials</h1><br><a href="/user/login_index/updated"> Retry To Login</a>')
 
 
 def work_add(request):
-    return render(request, 'add.html')
+    return render(request, 'add_user.html')
 
 
 def work_add_status(request):
@@ -56,4 +56,9 @@ def work_add_status(request):
 
     employee.save()
 
-    return HttpResponse('<h1> Saved Successfully !!!<br><a href="/user/login">Back To Login </a></h1>')
+    return HttpResponse('<h1> Saved Successfully !!!<br><a href="/user/login_index/updated">Back To Main Page </a></h1>')
+
+
+def updated(request):
+    employee = Employee.objects.all()
+    return render(request, 'show_user.html', {'employee': employee})

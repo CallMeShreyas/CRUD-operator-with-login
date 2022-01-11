@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form method="POST" action="/superuser/work_update/{{employee.id}}">
+        {% csrf_token %}
+        <tr>
+            <td><input name="eid" required value="{{ employee.eid}}">
+            </td>
+        </tr><br>
+        <tr>
+            <td><input name="ename" required value="{{ employee.ename}}">
+            </td>
+        </tr><br>
+        <tr>
+            <td><input name="eemail" required value="{{ employee.eemail}}">
+            </td>
+        </tr><br>
+        <tr>
+            <td><input name="econtact" required value="{{ employee.econtact}}">
+            </td>
+        </tr><br>
+        <button type="submit">
+            Update
+        </button>
+    </form>
+</body>
+
+</html>

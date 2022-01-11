@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Signup</title>
+</head>
+
+<body>
+    <h1> Proceed To Sign Up</h1>
+    <form method="post" action='/user/signup_index'>
+        {% csrf_token %}
+        <label> User Name </label><br>
+        <input type="text" name="uname"><br>
+        <label> Password </label><br>
+        <input type="text" name="upassword"><br>
+        <label> Re-Enter  Password </label><br>
+        <input type="text" name="upasswordagain"><br>
+        <button type="submit">Sign Up</button>
+    </form>
+</body>
+
+</html>

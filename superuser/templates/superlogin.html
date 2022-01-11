@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SuperUser Login</title>
+</head>
+<body>
+    <h1>Enter Your Credentials</h1><br>
+    <form method="post" action='/superuser/superlogin_index'>
+        {% csrf_token %}
+        <label>Super User Name </label><br>
+        <input type="text" name="sname"><br>
+        <label> Password </label><br>
+        <input type="text" name="spassword"><br><br>
+        <button type="submit">Log in</button>
+    </form>
+</body>
+</body>
+</html>

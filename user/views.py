@@ -40,7 +40,7 @@ def login_index(request):
         employee = Employee.objects.all()
         return render(request, 'show_user.html', {'employee': employee})
     else:
-        return HttpResponse('<h1>Invalid Credentials</h1><br><a href="/user/login_index/updated"> Retry To Login</a>')
+        return HttpResponse('<h1>Invalid Credentials</h1><br><a href="/user/login"> Retry To Login</a>')
 
 
 def work_add(request):

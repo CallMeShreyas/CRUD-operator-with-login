@@ -24,11 +24,11 @@ def signup_index(request):
             count = count+1
 
     if(count != 0 or upassword != upasswordagain):
-        return HttpResponse('<h1>Sign Up Failed</h1><br><a href="/user/signup">Try Again </a>')
+        return HttpResponse('<h1>Sign Up Failed</h1><br><a href="/user/signup"><button>Try Again </button></a>')
     else:
         user_obj = User(username=uname, password=upassword)
         user_obj.save()
-        return HttpResponse('<h1> SignUp Successfull !!</h1><br><a href="/user/login"> Back To Login </a>')
+        return HttpResponse('<h1> SignUp Successfull !!</h1><br><a href="/user/login"><button> Back To Login </button></a>')
 
 
 def login_index(request):
@@ -40,7 +40,7 @@ def login_index(request):
         employee = Employee.objects.all()
         return render(request, 'show_user.html', {'employee': employee})
     else:
-        return HttpResponse('<h1>Invalid Credentials</h1><br><a href="/user/login"> Retry To Login</a>')
+        return HttpResponse('<h1>Invalid Credentials</h1><br><a href="/user/login"><button> Retry To Login </button></a>')
 
 
 def work_add(request):
@@ -56,7 +56,7 @@ def work_add_status(request):
 
     employee.save()
 
-    return HttpResponse('<h1> Saved Successfully !!!<br><a href="/user/login_index/updated">Back To Main Page </a></h1>')
+    return HttpResponse('<h1> Saved Successfully !!!<br><a href="/user/login_index/updated"><button> Back To Main Page </button></a></h1>')
 
 
 def updated(request):

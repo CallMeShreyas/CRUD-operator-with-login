@@ -19,7 +19,7 @@ def superlogin_index(request):
         # return HttpResponse('<h1>User Login Success !!!</h1>')
         return render(request, 'show_superuser.html', {'employee': employee})
     else:
-        return HttpResponse('<h1>User Login Failed !!!</h1>')
+        return HttpResponse('<h1>Superuser Login FAILED !!!</h1><a href="/superuser"><button>Retry Again </button></a>')
 
 
 def work_add(request):
@@ -35,7 +35,7 @@ def work_add_status(request):
 
     employee.save()
 
-    return HttpResponse('<h1> Saved Successfully !!!<br><a href="/superuser/superlogin_index/updated">Back To Main Page </a></h1>')
+    return HttpResponse('<h1> Saved Successfully !!!<br><a href="/superuser/superlogin_index/updated"><button>Back To Main Page </button></a></h1>')
 
 
 def work_edit(request, id):
@@ -57,13 +57,13 @@ def work_update(request, id):
 
     employee.save()
 
-    return HttpResponse('<h1> Updated Successfully !!!<br><a href="/superuser/superlogin_index/updated">Back To Main Page </a></h1>')
+    return HttpResponse('<h1> Updated Successfully !!!<br><a href="/superuser/superlogin_index/updated"><button>Back To Main Page </button></a></h1>')
 
 
 def work_delete(request, id):
     employee = Employee.objects.get(id=id)
     employee.delete()
-    return HttpResponse('<h1> Record Deleted Successfully !!!<br><a href="/superuser/superlogin_index/updated">Back To Main Page </a></h1>')
+    return HttpResponse('<h1> Record Deleted Successfully !!!<br><a href="/superuser/superlogin_index/updated"><button>Back To Main Page </button></a></h1>')
 
 
 def updated(request):

@@ -16,13 +16,16 @@
 <body>
     <div class="container">
         <h1>Employee Table ( Only Visible To Superuser )</h1><br><br>
-        <table border="2">
+        <table class="table table-dark table-striped">
             <tr>
                 <!-- <th>PrimaryKey</th> -->
                 <th> ID</th>
                 <th> Name</th>
                 <th> Email</th>
                 <th> Contact</th>
+                <th>   Points </th>
+                <th> Add  </th>
+                <th> Withdraw </th>
                 <th> Edit </th>
                 <th> Delete </th>
             </tr>
@@ -35,6 +38,13 @@
                 <td>{{i.ename}}</td>
                 <td>{{i.eemail}}</td>
                 <td>{{i.econtact}}</td>
+                <td>{{i.epoints}}</td>
+                <td>
+                    <a href='work_addpoint/{{ i.id }}'> Add </a>
+                </td>
+                <td>
+                    <a href='work_withdraw/{{ i.id }}'> Withdraw </a>
+                </td>
                 <td>
                     <a href='work_edit/{{ i.id }}'> Edit </a>
                 </td>

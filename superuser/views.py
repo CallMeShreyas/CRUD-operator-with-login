@@ -69,3 +69,41 @@ def work_delete(request, id):
 def updated(request):
     employee = Employee.objects.all()
     return render(request, 'show_superuser.html', {'employee': employee})
+
+
+def work_addpoint(request, id):
+    employee = Employee.objects.get(id=id)
+    return render(request, 'addpoint.html', {'employee': employee})
+
+
+def work_addpoint_status(request, id):
+    addpt = request.POST.get('addpt', 'default')
+    # print(addpt)
+    addpt = int(addpt)
+    employee = Employee.objects.get(id=id)
+    v1 = employee.epoints
+    v1 = int(v1)
+    # print(v1)
+    v1 = v1 + addpt
+    employee.epoints = v1
+    employee.save()
+
+    return HttpResponse('<h1> Added Successfully !!!<br><br><a href="/superuser/superlogin_index/updated"><button>Back To Main Page </button></a></h1>')
+
+
+def work_withdraw(request, id):
+    employee = Employee.objects.get(id=id)
+    return render(request, 'withdraw.html', {'employee': employee})
+
+
+def work_withdraw_status(request, id):
+    withdr = request.POST.get('withdr', 'default')
+    withdr = int(withdr)
+    employee = Employee.objects.get(id=id)
+    v2 = employee.epoints
+    v2 = int(v2)
+    v2 = v2-withdr
+    employee.epoints = v2
+    employee.save()
+    
+    return HttpResponse('<h1> Withdraw Successful !!!<br><br><a href="/superuser/superlogin_index/updated"><button>Back To Main Page </button></a></h1>')

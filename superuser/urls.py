@@ -15,4 +15,13 @@ urlpatterns = [
     path('superlogin_index/work_update/<int:id>', views.work_update),
     path('superlogin_index/work_add/<int:id>', views.work_add),
     path('superlogin_index/work_edit/<int:id>', views.work_edit),
+    path('work_addpoint/<int:id>', views.work_addpoint),
+    path('work_addpoint_status/<int:id>', views.work_addpoint_status),
+    path('work_withdraw/<int:id>', views.work_withdraw),
+    path('work_withdraw_status/<int:id>', views.work_withdraw_status),
+
+    path('superlogin_index/work_addpoint/<int:id>', views.work_addpoint),
+    path('superlogin_index/work_addpoint_status/<int:id>', views.work_addpoint_status),
+    path('superlogin_index/work_withdraw/<int:id>', views.work_withdraw),
+    path('superlogin_index/work_withdraw_status/<int:id>', views.work_withdraw_status),
 ]
